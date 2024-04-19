@@ -18,7 +18,7 @@ from datetime import datetime
 from kafka import KafkaConsumer
 import mysql.connector
 
-TOPIC='toll'
+TOPIC = 'toll'
 DATABASE = 'tolldata'
 USERNAME = 'root'
 PASSWORD = os.environ.get("MYSQL_PASSWORD")
