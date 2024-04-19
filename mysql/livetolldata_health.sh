@@ -15,7 +15,7 @@
 #******************************************************************/
 
 # Connect to MySQL and perform query
-mysql --host=127.0.0.1 --port=3306 --user=root --password=${MYSQL_PASSWORD} << EOF
+mysql --host=127.0.0.1 --port=3306 --user=root --password=${MYSQL_PASSWORD} --table << EOF
 -- List the top 10 rows in the table livetolldata
 system echo 'Listing the top 10 rows in the livetolldata table';
 use tolldata;
