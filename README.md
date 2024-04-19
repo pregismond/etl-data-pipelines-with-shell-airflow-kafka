@@ -38,11 +38,12 @@ My final assignment submission is contained here. All of the source, scripts, an
 │           ├── tsv_data.csv                 <- extracted data from tollplaza-data.tsv
 │           └── vehicle-data.csv             <- comma-separated values file
 ├── kafka                            <- Streaming ETL Pipeline using Kafka
+│   ├── kafka_install.sh             <- 
 │   ├── streaming_data_reader.py     <- 
 │   └── toll_traffic_generator.py    <- 
 └── mysql
-    ├── livetolldata_health.sh    <-
-    └── mysql_prep.sh             <-
+    ├── livetolldata_health.sh    <- script to verify that streamed data is being collected
+    └── mysql_prep.sh             <- 
 ```
 
 ## Directions
@@ -87,13 +88,22 @@ My final assignment submission is contained here. All of the source, scripts, an
     `Rowid`, `Timestamp`, `Anonymized Vehicle number`, `Vehicle type`, `Number of axles`, `Tollplaza id`, `Tollplaza code`, `Type of Payment code`, and `Vehicle Code`
 1. Update the shell script to add a command to transform and load the data. You should transform the `Vehicle type` field in `extracted_data.csv` into capital letters and save it into a file named `transformed_data.csv`.
 1. Create a task `extract_transform_load` in the `ETL_toll_data.py` to call the shell script.
-1. Submit the DAG
-1. Unpause the DAG
-1. Monitor the DAG
+1. Submit the DAG.
+1. Unpause the DAG.
+1. Monitor the DAG.
 
 ### Final Assignment (Part 2) - Creating Streaming Data Pipelines using Kafka
 
-1.
+1. Start Zookeeper server.
+1. Start Kafka server.
+1. Create a Kafka topic named `toll`.
+1. Download the Toll Traffic Simulator `toll_traffic_generator.py` program.
+1. Configure the Toll Traffic Simulator and set the topic to `toll`.
+1. Run the Toll Traffic Simulator program.
+1. Download the Streaming Data Consumer `streaming_data_reader.py` program.
+1. Customize the consumer program to write into a MySQL database table.
+1. Run the Streaming Data Consumer program.
+1. Verify that streamed data is being collected in the database table.
 
 ## Notes
 
@@ -158,6 +168,12 @@ Download the required dataset to the destination specified using the terminal co
 
 ```bash
 sudo wget -P /home/project/airflow/dags https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0250EN-SkillsNetwork/labs/Final%20Assignment/tolldata.tgz
+```
+
+Download streaming data generator program:
+
+```bash
+sudo wget -P /home/project/kafka_2.12-2.8.0 https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0250EN-SkillsNetwork/labs/Final%20Assignment/toll_traffic_generator.py
 ```
 
 ## Learner
