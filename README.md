@@ -107,7 +107,7 @@ My final assignment submission is contained here. All of the source, scripts, an
 
 ## Notes
 
-While working on the final assignment, I encountered an issue with the `tollplaza-data.tsv` file within the `tolldata.tgz` compressed tarball. It turned out that this TSV file contained ^M characters, which are carriage return characters. These characters likely originated from an incorrect file transfer mode. As a consequence, the consolidated extracted data within `extracted_data.csv` was split into two lines.
+While working on the final assignment, I encountered an issue with the `tollplaza-data.tsv` file within the `tolldata.tgz` compressed tarball. It turned out that this TSV file contained `^M` characters, which are carriage return characters. These characters likely originated from an incorrect file transfer mode. As a consequence, the consolidated extracted data within `extracted_data.csv` was split into two lines.
 
 To address this issue, I followed the steps below:
 
@@ -123,14 +123,14 @@ Extract the files from the `tolldata.tar` archive
 tar xvf tolldata.tar
 ```
 
-Use the stream editor `sed` to remove the ^M characters.<br>
-To enter ^M, hold down the CTRL key then press V and M in succession.
+Use the stream editor `sed` to remove the `^M` characters.<br>
+To enter `^M`, hold down the CTRL key then press V and M in succession.
 
 ```bash
 sed 's/^M//' tollplaza-data.tsv > _tollplaza-data.tsv
 ```
 
-Rename to original filename:
+Rename _tollplaza-data.tsv to original filename:
 
 ```bash
 mv _tollplaza-data.tsv tollplaza-data.tsv
