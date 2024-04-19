@@ -20,33 +20,33 @@ As a data engineer, I find myself tasked with a project that seeks to alleviate 
 
 ## Project layout
 
-My final assignment submission is contained here. All of the source, scripts, and output files are in the `bash` folder.
+This repository contains all of the source files, scripts, and output files for the final assignment. Additional scripts have been provided in lieu of screenshots for various tasks.
 
 ```text
 ├── bash                                     <- ETL Pipeline using Bash with Airflow
 │   └── airflow/                             <- AIRFLOW_HOME
 │       └── dags/                            <- DAGS_FOLDER
-│           ├── csv_data.csv                 <- extracted data from vehicle-data.csv
+│           ├── csv_data.csv                 <- Extracted data from vehicle-data.csv
 │           ├── ETL_toll_data.py             <- ETL_toll_data DAG
-│           ├── Extract_Transform_data.sh    <- shell script for ETL tasks
-│           ├── extracted_data.csv           <- consolidated data from extracted files
-│           ├── fixed_width_data.csv         <- extracted data from payment-data.txt
-│           ├── payment-data.txt             <- fixed width file
-│           ├── tolldata.tgz                 <- repackaged source data tarball (see Notes section)
-│           ├── tollplaza-data.tsv           <- tab-separated values file
-│           ├── transformed_data.csv         <- transformed extracted data
-│           ├── tsv_data.csv                 <- extracted data from tollplaza-data.tsv
-│           └── vehicle-data.csv             <- comma-separated values file
+│           ├── Extract_Transform_data.sh    <- Shell script for ETL tasks
+│           ├── extracted_data.csv           <- Consolidated data from extracted files
+│           ├── fixed_width_data.csv         <- Extracted data from payment-data.txt
+│           ├── payment-data.txt             <- Fixed width file
+│           ├── tolldata.tgz                 <- Repackaged source data tarball (see Notes)
+│           ├── tollplaza-data.tsv           <- Tab-separated values file
+│           ├── transformed_data.csv         <- Transformed extracted data
+│           ├── tsv_data.csv                 <- Extracted data from tollplaza-data.tsv
+│           └── vehicle-data.csv             <- Comma-separated values file
 ├── kafka                            <- Streaming ETL Pipeline using Kafka
-│   ├── create_topic_toll.sh         <- script to create a topic named 'toll'
-│   ├── kafka_install.sh             <- prepare the kafka lab environment
-│   ├── start_kafka.sh               <- start kafka server
-│   ├── start_zookeeper.sh           <- start zookeeper server
-│   ├── streaming_data_reader.py     <- customized Streaming Data Consumer program
-│   └── toll_traffic_generator.py    <- customized Toll Traffic Simulator program
+│   ├── create_topic_toll.sh         <- Script to create a topic named 'toll'
+│   ├── kafka_install.sh             <- Script to prepare the kafka lab environment
+│   ├── start_kafka.sh               <- Script to start kafka server
+│   ├── start_zookeeper.sh           <- Script to start zookeeper server
+│   ├── streaming_data_reader.py     <- Customized Streaming Data Consumer program
+│   └── toll_traffic_generator.py    <- Customized Toll Traffic Simulator program
 └── mysql
-    ├── livetolldata_health.sh    <- script to verify that streamed data is being collected
-    └── mysql_prep.sh             <- prepare the MySQL lab environment
+    ├── livetolldata_health.sh    <- Script to verify that streamed data is being collected
+    └── mysql_prep.sh             <- Script to prepare the MySQL lab environment
 ```
 
 ## Directions
@@ -167,7 +167,7 @@ Install the required libraries using the provided `requirements.txt` file. The c
 python3 -m pip install -r requirements.txt
 ```
 
-Download the required dataset to the destination specified using the terminal command:
+[Optional] Download the required dataset to the destination specified using the terminal command (see Notes):
 
 ```bash
 sudo wget -P /home/project/airflow/dags https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0250EN-SkillsNetwork/labs/Final%20Assignment/tolldata.tgz
