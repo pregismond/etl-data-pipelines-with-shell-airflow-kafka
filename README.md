@@ -32,18 +32,21 @@ My final assignment submission is contained here. All of the source, scripts, an
 │           ├── extracted_data.csv           <- consolidated data from extracted files
 │           ├── fixed_width_data.csv         <- extracted data from payment-data.txt
 │           ├── payment-data.txt             <- fixed width file
-│           ├── tolldata.tgz                 <- compressed source data tarball
+│           ├── tolldata.tgz                 <- repackaged source data tarball (see Notes section)
 │           ├── tollplaza-data.tsv           <- tab-separated values file
 │           ├── transformed_data.csv         <- transformed extracted data
 │           ├── tsv_data.csv                 <- extracted data from tollplaza-data.tsv
 │           └── vehicle-data.csv             <- comma-separated values file
 ├── kafka                            <- Streaming ETL Pipeline using Kafka
-│   ├── kafka_install.sh             <- 
-│   ├── streaming_data_reader.py     <- 
-│   └── toll_traffic_generator.py    <- 
+│   ├── create_topic_toll.sh         <- script to create a topic named 'toll'
+│   ├── kafka_install.sh             <- prepare the kafka lab environment
+│   ├── start_kafka.sh               <- start kafka server
+│   ├── start_zookeeper.sh           <- start zookeeper server
+│   ├── streaming_data_reader.py     <- customized Streaming Data Consumer program
+│   └── toll_traffic_generator.py    <- customized Toll Traffic Simulator program
 └── mysql
     ├── livetolldata_health.sh    <- script to verify that streamed data is being collected
-    └── mysql_prep.sh             <- 
+    └── mysql_prep.sh             <- prepare the MySQL lab environment
 ```
 
 ## Directions
