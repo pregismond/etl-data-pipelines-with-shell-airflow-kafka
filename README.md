@@ -22,7 +22,7 @@ As a data engineer, I find myself tasked with a project that seeks to alleviate 
 This repository contains all of the source files, scripts, and output files for the final assignment. Additional scripts have been provided in lieu of screenshots for various tasks.
 
 ```text
-├── bash                                     <- ETL Pipeline using Bash with Airflow
+├── bash                                     <- Part 1 - Creating ETL Data Pipelines using Bash with Apache Airflow
 │   └── airflow/                             <- AIRFLOW_HOME
 │       └── dags/                            <- DAGS_FOLDER
 │           ├── csv_data.csv                 <- Extracted data from vehicle-data.csv
@@ -36,16 +36,16 @@ This repository contains all of the source files, scripts, and output files for 
 │           ├── transformed_data.csv         <- Transformed extracted data
 │           ├── tsv_data.csv                 <- Extracted data from tollplaza-data.tsv
 │           └── vehicle-data.csv             <- Comma-separated values file
-├── kafka                            <- Streaming ETL Pipeline using Kafka
-│   ├── create_topic_toll.sh         <- Script to create a topic named 'toll'
-│   ├── kafka_install.sh             <- Script to prepare the kafka lab environment
-│   ├── start_kafka.sh               <- Script to start kafka server
-│   ├── start_zookeeper.sh           <- Script to start zookeeper server
+├── kafka                            <- Part 2 - Creating Streaming Data Pipelines using Kafka
+│   ├── create_topic_toll.sh         <- Exercise 2: Task 2.3 - Create a topic named 'toll'
+│   ├── kafka_install.sh             <- Exercise 1 - Prepare the lab environment (Steps 1-2)
+│   ├── start_kafka.sh               <- Exercise 2: Task 2.2 - Start Kafka server
+│   ├── start_zookeeper.sh           <- Exercise 2: Task 2.1 - Start Zookeeper
 │   ├── streaming_data_reader.py     <- Customized Streaming Data Consumer program
 │   └── toll_traffic_generator.py    <- Customized Toll Traffic Simulator program
 └── mysql
-    ├── livetolldata_health.sh    <- Script to verify that streamed data is being collected
-    └── mysql_prep.sh             <- Script to prepare the MySQL lab environment
+    ├── livetolldata_health.sh    <- Exercise 2: Task 2.9 - Health check of the streaming data pipeline
+    └── mysql_prep.sh             <- Exercise 1 - Prepare the lab environment (Steps 3-9)
 ```
 
 ## Directions
@@ -164,6 +164,12 @@ Install the required libraries using the provided `requirements.txt` file. The c
 
 ```bash
 python3 -m pip install -r requirements.txt
+```
+
+Set execute permission:
+
+```bash
+sudo chmod
 ```
 
 [Optional] Download the required dataset to the destination specified using the terminal command (see Notes):
