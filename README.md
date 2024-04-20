@@ -37,14 +37,14 @@ This repository contains all of the source files, scripts, and output files for 
 │           ├── tsv_data.csv                 <- Extracted data from tollplaza-data.tsv
 │           └── vehicle-data.csv             <- Comma-separated values file
 ├── kafka                            <- Creating Streaming Data Pipelines using Kafka
-│   ├── create_topic_toll.sh         <- Exercise 2: Task 2.3 - Create a topic named 'toll'
+│   ├── create_topic_toll.sh         <- Exercise 2.3 - Create a topic named 'toll'
 │   ├── kafka_install.sh             <- Exercise 1 - Prepare the lab environment (Steps 1-2)
-│   ├── start_kafka.sh               <- Exercise 2: Task 2.2 - Start Kafka server
-│   ├── start_zookeeper.sh           <- Exercise 2: Task 2.1 - Start Zookeeper
+│   ├── start_kafka.sh               <- Exercise 2.2 - Start Kafka server
+│   ├── start_zookeeper.sh           <- Exercise 2.1 - Start Zookeeper
 │   ├── streaming_data_reader.py     <- Customized Streaming Data Consumer program
 │   └── toll_traffic_generator.py    <- Customized Toll Traffic Simulator program
 └── mysql
-    ├── livetolldata_health.sh    <- Exercise 2: Task 2.9 - Health check of the streaming data pipeline
+    ├── livetolldata_health.sh    <- Exercise 2.9 - Health check of the streaming data pipeline
     └── mysql_prep.sh             <- Exercise 1 - Prepare the lab environment (Steps 3-9)
 ```
 
@@ -96,6 +96,8 @@ This repository contains all of the source files, scripts, and output files for 
 
 ### Final Assignment (Part 2) - Creating Streaming Data Pipelines using Kafka
 
+1. Start a MySQL Database server.
+1. Create a table to hold the toll data.
 1. Start Zookeeper server.
 1. Start Kafka server.
 1. Create a Kafka topic named `toll`.
@@ -166,10 +168,11 @@ Install the required libraries using the provided `requirements.txt` file. The c
 python3 -m pip install -r requirements.txt
 ```
 
-Set execute permission:
+Execute the folllowing commands to avoid any permission issues:
 
 ```bash
-sudo chmod
+sudo chown -R 100999 /home/project/airflow/dags
+sudo chmod -R g+rw /home/project/airflow/dags
 ```
 
 [Optional] Download the required dataset to the destination specified using the terminal command (see Notes):
