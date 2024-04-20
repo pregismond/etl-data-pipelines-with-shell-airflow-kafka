@@ -1,6 +1,5 @@
 # ETL and Data Pipelines with Shell, Airflow and Kafka
 
-![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fpregismond%2Fibm-etl-data-pipelines-shell-airflow-kafka&label=Visitors&countColor=%230d76a8&style=flat&labelStyle=none)
 [![License](https://img.shields.io/badge/License-Apache_2.0-0D76A8?style=flat)](https://opensource.org/licenses/Apache-2.0)
 [![Python 3.10](https://img.shields.io/badge/Python-3.10-green.svg)](https://shields.io/)
 
@@ -173,10 +172,16 @@ python3 -m pip install -r requirements.txt
 sudo wget -P /home/project/airflow/dags https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0250EN-SkillsNetwork/labs/Final%20Assignment/tolldata.tgz
 ```
 
-Download streaming data generator program:
+[Optional] Download Toll Traffic Simulator program:
 
 ```bash
-sudo wget -P /home/project/kafka_2.12-2.8.0 https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0250EN-SkillsNetwork/labs/Final%20Assignment/toll_traffic_generator.py
+sudo wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0250EN-SkillsNetwork/labs/Final%20Assignment/toll_traffic_generator.py
+```
+
+[Optional] Download Streaming Data Consumer program:
+
+```bash
+sudo wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0250EN-SkillsNetwork/labs/Final%20Assignment/streaming_data_reader.py
 ```
 
 ## Learner
