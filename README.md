@@ -22,7 +22,7 @@ As a data engineer, I find myself tasked with a project that seeks to alleviate 
 This repository contains all of the source files, scripts, and output files for the final assignment. Additional scripts have been provided in lieu of screenshots for various tasks.
 
 ```text
-├── bash                                     <- Part 1 - Creating ETL Data Pipelines using Bash with Apache Airflow
+├── bash                                     <- Creating ETL Data Pipelines using Bash with Apache Airflow
 │   └── airflow/                             <- AIRFLOW_HOME
 │       └── dags/                            <- DAGS_FOLDER
 │           ├── csv_data.csv                 <- Extracted data from vehicle-data.csv
@@ -36,7 +36,7 @@ This repository contains all of the source files, scripts, and output files for 
 │           ├── transformed_data.csv         <- Transformed extracted data
 │           ├── tsv_data.csv                 <- Extracted data from tollplaza-data.tsv
 │           └── vehicle-data.csv             <- Comma-separated values file
-├── kafka                            <- Part 2 - Creating Streaming Data Pipelines using Kafka
+├── kafka                            <- Creating Streaming Data Pipelines using Kafka
 │   ├── create_topic_toll.sh         <- Exercise 2: Task 2.3 - Create a topic named 'toll'
 │   ├── kafka_install.sh             <- Exercise 1 - Prepare the lab environment (Steps 1-2)
 │   ├── start_kafka.sh               <- Exercise 2: Task 2.2 - Start Kafka server
