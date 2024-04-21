@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 SCRIPT: ETL_toll_data.py
 AUTHOR: Pravin Regismond
