@@ -22,11 +22,11 @@ As a data engineer, I find myself tasked with a project that seeks to alleviate 
 This repository contains all of the source files, scripts, and output files for the final assignment. Additional scripts have been provided in lieu of screenshots for various tasks.
 
 ```text
-├── bash                                     <- Creating ETL Data Pipelines using Bash with Apache Airflow
+├── bash                                     <- Build an ETL Pipeline using Bash with Airflow
 │   └── airflow/                             <- AIRFLOW_HOME
 │       └── dags/                            <- DAGS_FOLDER
 │           ├── csv_data.csv                 <- Extracted data from vehicle-data.csv
-│           ├── ETL_toll_data.py             <- ETL_toll_data DAG
+│           ├── ETL_toll_data.py             <- ETL_toll_data DAG using BashOperator
 │           ├── Extract_Transform_data.sh    <- Shell script for ETL tasks
 │           ├── extracted_data.csv           <- Consolidated data from extracted files
 │           ├── fixed_width_data.csv         <- Extracted data from payment-data.txt
@@ -43,9 +43,25 @@ This repository contains all of the source files, scripts, and output files for 
 │   ├── start_zookeeper.sh           <- Exercise 2.1 - Start Zookeeper
 │   ├── streaming_data_reader.py     <- Customized Streaming Data Consumer program
 │   └── toll_traffic_generator.py    <- Customized Toll Traffic Simulator program
-└── mysql
-    ├── livetolldata_health.sh    <- Exercise 2.9 - Health check of the streaming data pipeline
-    └── mysql_prep.sh             <- Exercise 1 - Prepare the lab environment (Steps 3-9)
+├── mysql
+│   ├── livetolldata_health.sh    <- Exercise 2.9 - Health check of the streaming data pipeline
+│   └── mysql_prep.sh             <- Exercise 1 - Prepare the lab environment (Steps 3-9)
+└── python                                      <- Build an ETL Pipeline using Airflow
+    └── airflow/                                <- AIRFLOW_HOME
+        └── dags/                               <- DAGS_FOLDER
+            └── finalassignment/                <- finalassignment folder
+                ├── staging/                    <- staging folder
+                │   ├── ETL_toll_data.py        <- ETL_toll_data DAG using PythonOperator
+                │   └── transformed_data.csv    <- Transformed extracted data
+                ├── csv_data.csv                <- Extracted data from vehicle-data.csv
+                ├── extracted_data.csv          <- Consolidated data from extracted files
+                ├── fixed_width_data.csv        <- Extracted data from payment-data.txt
+                ├── payment-data.txt            <- Fixed width file
+                ├── tolldata.tgz                <- Repackaged source data tarball (see Notes)
+                ├── tollplaza-data.tsv          <- Tab-separated values file
+                ├── transformed_data.csv        <- Transformed extracted data
+                ├── tsv_data.csv                <- Extracted data from tollplaza-data.tsv
+                └── vehicle-data.csv            <- Comma-separated values file
 ```
 
 ## Directions
@@ -168,17 +184,29 @@ Install the required libraries using the provided `requirements.txt` file. The c
 python3 -m pip install -r requirements.txt
 ```
 
+Create a directory structure for staging area as follows:
+
+```bash
+sudo mkdir -p /home/project/airflow/dags/finalassignment/staging
+```
+
 Execute the folllowing commands to avoid any permission issues:
 
 ```bash
-sudo chown -R 100999 /home/project/airflow/dags
-sudo chmod -R g+rw /home/project/airflow/dags
+sudo chown -R 100999 /home/project/airflow/dags/finalassignment
+sudo chmod -R g+rw /home/project/airflow/dags/finalassignment  
+sudo chown -R 100999 /home/project/airflow/dags/finalassignment/staging
+sudo chmod -R g+rw /home/project/airflow/dags/finalassignment/staging
 ```
 
 [Optional] Download the required dataset to the destination specified using the terminal command (see Notes):
 
 ```bash
+# bash
 sudo wget -P /home/project/airflow/dags https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0250EN-SkillsNetwork/labs/Final%20Assignment/tolldata.tgz
+
+# python
+sudo wget -P /home/project/airflow/dags/finalassignment https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0250EN-SkillsNetwork/labs/Final%20Assignment/tolldata.tgz
 ```
 
 [Optional] Download Toll Traffic Simulator program:
