@@ -127,7 +127,7 @@ This repository contains all of the source files, scripts, and output files for 
 
 ## Notes
 
-While working on the final assignment, I encountered an issue with the `tollplaza-data.tsv` file within the `tolldata.tgz` compressed tarball. It turned out that this TSV file contained `^M` characters, which are carriage return characters. These characters likely originated from an incorrect file transfer mode. As a consequence, the consolidated extracted data within `extracted_data.csv` was split into two lines.
+While working on the final assignment, I encountered an issue with the `tollplaza-data.tsv` file within the `tolldata.tgz` compressed tarball. It turned out that this TSV file contained `^M` characters, which are carriage return characters. These characters likely originated from an incorrect file transfer mode. As a consequence, the consolidated extracted data within `extracted_data.csv` was split into two lines per row.
 
 To address this issue, I followed the steps below:
 
