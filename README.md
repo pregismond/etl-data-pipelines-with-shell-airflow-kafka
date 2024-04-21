@@ -12,7 +12,7 @@ This repository contains my final assignment submission for **[IBM Skills Networ
 
 ## Project Scenario
 
-As a data engineer, I find myself tasked with a project that seeks to alleviate congestion on national highways. My mission involves analyzing road traffic data from various toll plazas. Here’s the catch: each highway is managed by a different toll operator, and their IT systems employ different file formats. My challenge lies in harmonizing this disparate data to derive meaningful insights and contribute to smoother traffic flow.
+As a data engineer, I am tasked with a project that seeks to alleviate congestion on national highways. To do so, I must analyze road traffic data from various toll plazas. Here’s the catch: each highway is managed by a different toll operator, and their IT systems employ different file formats. My challenge lies in harmonizing this disparate data to derive meaningful insights and contribute to smoother traffic flow. Following that, I need to create a data pipeline to collect the timestamp data streamed to Kafka and load it into a database. The high-level approach was to:
 
 * Collect data available in different formats and consolidate it into a single file.
 * Create a data pipeline that collects the streaming data and loads it into a database.
@@ -57,7 +57,7 @@ This repository contains all of the source files, scripts, and output files for 
                 ├── extracted_data.csv          <- Consolidated data from extracted files
                 ├── fixed_width_data.csv        <- Extracted data from payment-data.txt
                 ├── payment-data.txt            <- Fixed width file
-                ├── tolldata.tgz                <- Repackaged source data tarball (see Notes)
+                ├── tolldata.tgz                <- Source data tarball
                 ├── tollplaza-data.tsv          <- Tab-separated values file
                 ├── transformed_data.csv        <- Transformed extracted data
                 ├── tsv_data.csv                <- Extracted data from tollplaza-data.tsv
