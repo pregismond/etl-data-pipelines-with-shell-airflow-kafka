@@ -5,7 +5,7 @@
 # AUTHOR: Pravin Regismond
 # DATE: 2024-04-11
 # DESCRIPTION: Exercise 1 - Prepare the lab environment
-#              - Download Kafka
+#              - Download Kafka 2.8.0 for Scala 2.12
 #              - Extract Kafka
 #
 #******************************************************************
