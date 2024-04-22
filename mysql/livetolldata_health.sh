@@ -5,6 +5,9 @@
 # AUTHOR: Pravin Regismond
 # DATE: 2024-04-11
 # DESCRIPTION: Health check of the streaming data pipeline
+#              - Connect to MySQL on the IBM Skills Network Labs
+#              - Execute query to list the top 10 rows in the
+#                livetolldata table
 #
 #******************************************************************
 # AUDIT TRAIL START                               INIT  DATE
