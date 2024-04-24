@@ -24,6 +24,7 @@ from airflow.utils.dates import days_ago
 
 import pandas as pd
 
+
 def unzip_tolldata(source, destination):
     """
     Extracts the contents of the source dataset .tgz file to the specified
