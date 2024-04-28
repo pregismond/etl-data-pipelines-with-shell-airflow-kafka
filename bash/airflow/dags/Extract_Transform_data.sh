@@ -11,6 +11,8 @@
 # AUDIT TRAIL START                               INIT  DATE
 # ----------------------------------------------  ----- -----------
 # 1. Initial version                              PR    2024-04-11
+# 2. Modified to remove ^M characters when        PR    2024-04-27
+#    extracting data from TSV file
 #
 # AUDIT TRAIL END
 #******************************************************************/
@@ -25,7 +27,10 @@ cut -d "," -f1-4 /home/project/airflow/dags/vehicle-data.csv > /home/project/air
 
 # Extract data from TSV file
 echo "Extracting data from the TSV file..."
-cut -f5-7 /home/project/airflow/dags/tollplaza-data.tsv | tr "\t" "," > /home/project/airflow/dags/tsv_data.csv
+# Modified to remove ^M characters (carriage returns) found in tollplaza-data.tsv file
+# Used awk command with gsub to remove carriage return after trying sed command, which did not give the desired results
+# cut -f5-7 /home/project/airflow/dags/tollplaza-data.tsv | tr "\t" "," > /home/project/airflow/dags/tsv_data.csv
+cut -f5-7 /home/project/airflow/dags/tollplaza-data.tsv | awk '{gsub(/\r/,""); print}' | tr "\t" "," > /home/project/airflow/dags/tsv_data.csv
 
 # Extract data from fixed-width file
 echo "Extracting data from the fixed-width file..."
