@@ -32,8 +32,8 @@ This repository contains all of the source files, scripts, and output files for 
 │           ├── extracted_data.csv           <- Consolidated data from extracted files
 │           ├── fixed_width_data.csv         <- Extracted data from payment-data.txt
 │           ├── payment-data.txt             <- Fixed width file
-│           ├── tolldata.tgz                 <- Repackaged source data tarball (see Notes)
-│           ├── tollplaza-data.tsv           <- Tab-separated values file
+│           ├── tolldata.tgz                 <- Source data tarball
+│           ├── tollplaza-data.tsv           <- Tab-separated values file  (see Notes)
 │           ├── transformed_data.csv         <- Transformed extracted data
 │           ├── tsv_data.csv                 <- Extracted data from tollplaza-data.tsv
 │           └── vehicle-data.csv             <- Comma-separated values file
@@ -132,7 +132,9 @@ While working on the final assignment, I encountered an issue with the `tollplaz
 
 ![](tollplaza-data-controlM.png)
 
-To address this issue, I followed the steps below:
+In response to this issue, I’ve presented two potential solutions:
+
+#### *Solution 1: Update `tollplaza-data.tsv` File in `tolldata.tgz`*
 
 Decompress the TGZ file:
 
@@ -177,7 +179,15 @@ Rename compressed tarball to .tgz extension:
 mv tolldata.tar.gz tolldata.tgz
 ```
 
-By following these steps, I successfully corrected the problem and ensured that the consolidated data remained intact.
+#### *Solution 2: Use `awk` to Remove Carriage Return Characters*
+
+Using `awk '{gsub(/\r/,""); print}'`, which uses a global substitution to search and replace carriage return characters with an empty string. Then outputs the modified line for further processing.
+
+```bash
+cut -f5-7 /home/project/airflow/dags/tollplaza-data.tsv | awk '{gsub(/\r/,""); print}' | tr "\t" "," > /home/project/airflow/dags/tsv_data.csv
+```
+
+Both solutions will successfully correct the problem and ensured that the consolidated data remains intact.
 
 ## Usage
 
