@@ -181,7 +181,7 @@ mv tolldata.tar.gz tolldata.tgz
 
 #### *Solution 2: Use `awk` to Remove Carriage Return Characters*
 
-Using `awk '{gsub(/\r/,""); print}'`, which uses a global substitution to search and replace carriage return characters with an empty string. Then outputs the modified line for further processing.
+Using `awk '{gsub(/\r/,""); print}'` to globally replace carriage return characters with an empty string. The resulting modified line is then available for further processing.
 
 ```bash
 cut -f5-7 /home/project/airflow/dags/tollplaza-data.tsv | awk '{gsub(/\r/,""); print}' | tr "\t" "," > /home/project/airflow/dags/tsv_data.csv
