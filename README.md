@@ -134,7 +134,7 @@ While working on the final assignment, I encountered an issue with the `tollplaz
 
 In response to this issue, I’ve presented two potential solutions:
 
-#### *Solution 1: Update `tollplaza-data.tsv` File in `tolldata.tgz`*
+### Solution 1: Update `tollplaza-data.tsv` File in `tolldata.tgz`
 
 Decompress the TGZ file:
 
@@ -179,7 +179,7 @@ Rename compressed tarball to .tgz extension:
 mv tolldata.tar.gz tolldata.tgz
 ```
 
-#### *Solution 2: Use `awk` to Remove Carriage Return Characters*
+### Solution 2: Use `awk` to Remove Carriage Return Characters
 
 Using `awk '{gsub(/\r/,""); print}'` to globally replace carriage return characters with an empty string. The resulting modified line is then available for further processing.
 
@@ -206,13 +206,18 @@ sudo mkdir -p /home/project/airflow/dags/finalassignment/staging
 Execute the folllowing commands to avoid any permission issues:
 
 ```bash
+# bash
+sudo chown -R 100999 /home/project/airflow/dags
+sudo chmod -R g+rw /home/project/airflow/dags
+
+# python
 sudo chown -R 100999 /home/project/airflow/dags/finalassignment
 sudo chmod -R g+rw /home/project/airflow/dags/finalassignment  
 sudo chown -R 100999 /home/project/airflow/dags/finalassignment/staging
 sudo chmod -R g+rw /home/project/airflow/dags/finalassignment/staging
 ```
 
-[Optional] Download the required dataset to the destination specified using the terminal command (see Notes):
+Download the required dataset to the destination specified using the terminal command:
 
 ```bash
 # bash
@@ -222,13 +227,13 @@ sudo wget -P /home/project/airflow/dags https://cf-courses-data.s3.us.cloud-obje
 sudo wget -P /home/project/airflow/dags/finalassignment https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0250EN-SkillsNetwork/labs/Final%20Assignment/tolldata.tgz
 ```
 
-[Optional] Download Toll Traffic Simulator program:
+Download Toll Traffic Simulator program:
 
 ```bash
 sudo wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0250EN-SkillsNetwork/labs/Final%20Assignment/toll_traffic_generator.py
 ```
 
-[Optional] Download Streaming Data Consumer program:
+Download Streaming Data Consumer program:
 
 ```bash
 sudo wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0250EN-SkillsNetwork/labs/Final%20Assignment/streaming_data_reader.py
