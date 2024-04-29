@@ -47,7 +47,7 @@ This repository contains all of the source files, scripts, and output files for 
 ├── mysql
 │   ├── livetolldata_health.sh    <- Exercise 2.9 - Health check of the streaming data pipeline
 │   └── mysql_prep.sh             <- Exercise 1 - Prepare the lab environment (Steps 3-9)
-└── python                                      <- Build an ETL Pipeline using Airflow
+└── python                                      <- Build an ETL Pipeline using Airflow *
     └── airflow/                                <- AIRFLOW_HOME
         └── dags/                               <- DAGS_FOLDER
             └── finalassignment/                <- finalassignment folder
@@ -63,6 +63,8 @@ This repository contains all of the source files, scripts, and output files for 
                 ├── transformed_data.csv        <- Transformed extracted data
                 ├── tsv_data.csv                <- Extracted data from tollplaza-data.tsv
                 └── vehicle-data.csv            <- Comma-separated values file
+
+* NOTE: For the final assignment, you have the option to complete either the Bash or Python lab for Airflow. Additionally, I’ve included an ETL_toll_data DAG that utilizes PythonOperator, a topic not covered in this course.   
 ```
 
 ## Directions
