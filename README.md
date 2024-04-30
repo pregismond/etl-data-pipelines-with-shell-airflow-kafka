@@ -4,7 +4,15 @@
 [![License](https://img.shields.io/badge/License-Apache_2.0-0D76A8?style=flat)](https://opensource.org/licenses/Apache-2.0)
 [![Python 3.10](https://img.shields.io/badge/Python-3.10-green.svg)](https://shields.io/)
 
-This repository contains my final assignment submission for **[IBM Skills Network - Coursera: ETL and Data Pipelines with Shell, Airflow and Kafka](https://www.coursera.org/learn/etl-and-data-pipelines-shell-airflow-kafka)**
+## Disclaimer
+
+This repository contains my submission for the Final Assignment, consisting of ***Hands-on Lab: Build an ETL Pipeline using Bash with Airflow*** and ***Hands-on Lab: Build a Streaming ETL Pipeline using Kafka***. The original files were provided by the IBM Skills Network as part of the **[ETL and Data Pipelines with Shell, Airflow and Kafka](https://www.coursera.org/learn/etl-and-data-pipelines-shell-airflow-kafka)** course on Coursera.
+
+### Usage
+
+* You are welcome to use this repository as a reference or starting point for your own assignment.
+
+* If you choose to fork this repository, please ensure that you comply with the terms of the Apache License and give proper credit to the orginal authors.
 
 ## Objectives
 
@@ -193,7 +201,7 @@ cut -f5-7 /home/project/airflow/dags/tollplaza-data.tsv | awk '{gsub(/\r/,""); p
 
 Both solutions will successfully correct the problem and ensured that the consolidated data remains intact.
 
-## Usage
+## Setup
 
 Install the required libraries using the provided `requirements.txt` file. The command syntax is:
 
@@ -247,16 +255,6 @@ sudo wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM
 
 [Pravin Regismond](https://www.linkedin.com/in/pregismond)
 
-## Instructor
+## Acknowledgments
 
-[Ramesh Sannareddy](https://www.coursera.org/instructor/~75088416), Data Engineering Subject Matter Expert, @ IBM
-
-## Other Contributors
-
-Niveditha Pandith
-
-Rav Ahuja
-
-Lakshmi Holla
-
-## <h3 align="center"> © IBM Corporation 2021. All rights reserved. <h3/>
+* IBM Skills Network © IBM Corporation 2021. All rights reserved.
