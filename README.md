@@ -1,4 +1,4 @@
-# Harmonizing Disparate Toll Plaza Data with Airflow and Kafka
+# Traffic Flow Optimization with Airflow and Kafka
 
 ![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fpregismond%2Fetl-data-pipelines-with-shell-airflow-kafka&label=Visitors&countColor=%230d76a8&style=flat&labelStyle=none)
 [![License](https://img.shields.io/badge/License-Apache_2.0-0D76A8?style=flat)](https://opensource.org/licenses/Apache-2.0)
